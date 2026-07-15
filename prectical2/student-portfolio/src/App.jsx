@@ -1,4 +1,5 @@
 import { Link, Route, Routes } from 'react-router-dom'
+import Contact from './components/Contact'
 
 function Home() {
   return (
@@ -22,22 +23,19 @@ function Projects() {
   )
 }
 
-function Contact() {
+function NavBar() {
   return (
-    <main>
-      <h1>Contact</h1>
-      <p>Email: dharm@example.com</p>
-    </main>
+    <nav>
+      <Link to="/">Home</Link> | <Link to="/projects">Projects</Link> |{' '}
+      <Link to="/contact">Contact</Link>
+    </nav>
   )
 }
 
 function App() {
   return (
     <>
-      <nav>
-        <Link to="/">Home</Link> | <Link to="/projects">Projects</Link> |{' '}
-        <Link to="/contact">Contact</Link>
-      </nav>
+      <NavBar />
 
       <Routes>
         <Route path="/" element={<Home />} />
